@@ -1,0 +1,230 @@
+﻿<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+<head>
+    <title>NgTradeOnline.Web</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
+
+    @Styles.Render("~/Content/css/unify")
+</head>
+<body data-ng-app="main" data-ng-controller="RootController">
+    <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+    <div class="wrapper">
+        <!--=== Header ===-->
+        <div class="header">
+            <!-- Topbar -->
+            <div class="topbar">
+                <div class="container">
+                    <!-- Topbar Navigation -->
+                    <ul class="loginbar pull-right">
+                        <li><a href="page_faq.html">Help</a></li>
+                        <li class="topbar-devider"></li>
+                        <li><a href="#/login">Login</a></li>
+                        <li class="topbar-devider"></li>
+                        <li><a href="#/register">Register</a></li>
+                    </ul>
+                    <!-- End Topbar Navigation -->
+                </div>
+            </div>
+            <!-- End Topbar -->
+            <!-- Navbar -->
+            <div class="navbar navbar-default" role="navigation">
+                <div class="container">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="fa fa-bars"></span>
+                        </button>
+                        <a class="navbar-brand" href="#/">
+                            <img id="logo-header" src="/images/logo.png" alt="NgTradeOnline" />
+                        </a>
+                    </div>
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse navbar-responsive-collapse">
+                        <ul class="nav navbar-nav">
+                            <li data-ng-class="{active : activeViewPath==='/home'}">
+                                <a href="#/home">
+                                    Home
+                                </a>
+                            </li>
+                            <li class="dropdown" data-ng-class="{active : activeViewPath==='/dailypricelist' || activeViewPath==='/daygainers' || activeViewPath==='/daylosers' }">
+                                <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
+                                    Daily Price List
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#/dailypricelist">Daily Price List</a></li>
+                                    <li><a href="#/daygainers">Day Gainers</a></li>
+                                    <li><a href="#/daylosers">Day Losers</a></li>
+                                    <li><a href="#/research">Research</a></li>
+                                </ul>
+                            </li>
+                            <li data-ng-class="{active : activeViewPath==='/nsenews'}">
+                                <a href="#/nsenews" class="dropdown-toggle" data-toggle="dropdown">
+                                    News and Events
+                                </a>
+                            </li>
+                            <li data-ng-class="{active : activeViewPath==='/nseeducation'}">
+                                <a href="#/nseeducation" class="dropdown-toggle" data-toggle="dropdown">
+                                    Education
+                                </a>
+                            </li>
+                            <li class="dropdown" data-ng-class="{active : activeViewPath==='/about' || activeViewPath==='/privacy' || activeViewPath==='/terms' }">
+                                <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
+                                    About NgTradeOnline
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#/about">About Us</a></li>
+                                    <li><a href="#/privacy">Privacy</a></li>
+                                    <li><a href="#/terms">Terms</a></li>
+                                </ul>
+                            </li>
+                            <li data-ng-class="{active : activeViewPath==='/nsecontactus'}">
+                                <a href="#/nsecontactus" class="dropdown-toggle" data-toggle="dropdown">
+                                    Contact Us
+                                </a>
+                            </li>
+                            <li>
+                                <i class="search fa fa-search search-btn"></i>
+                                <div class="search-open">
+                                    <div class="input-group animated fadeInDown">
+                                        <input type="text" class="form-control" placeholder="Enter stock name">
+                                        <span class="input-group-btn">
+                                            <button class="btn-u" type="button">Search</button>
+                                        </span>
+                                    </div>
+                                </div>
+                            </li>
+                            <!-- End Search Block -->
+                        </ul>
+                    </div><!--/navbar-collapse-->
+                </div>
+            </div>
+            <!-- End Navbar -->
+        </div>
+        <!--=== End Header ===-->
+        @RenderBody()
+        <!--=== Footer ===-->
+        <div class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 md-margin-bottom-40">
+                        <!-- About -->
+                        <div class="headline"><h2>About</h2></div>
+                        <p class="margin-bottom-25 md-margin-bottom-40">Unify is an incredibly beautiful responsive Bootstrap Template for corporate and creative professionals.</p>
+                        <!-- End About -->
+                        <!-- Monthly Newsletter -->
+                        <div class="headline"><h2>Monthly Newsletter</h2></div>
+                        <p>Subscribe to our newsletter and stay up to date with the latest news and deals!</p>
+                        <form class="footer-subsribe">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Email Address">
+                                <span class="input-group-btn">
+                                    <button class="btn-u" type="button">Subscribe</button>
+                                </span>
+                            </div>
+                        </form>
+                        <!-- End Monthly Newsletter -->
+                    </div><!--/col-md-4-->
+
+                    <div class="col-md-4 md-margin-bottom-40">
+                        <!-- Recent Blogs -->
+                        <div class="posts">
+                            <div class="headline"><h2>Recent Blog Entries</h2></div>
+                            <dl class="dl-horizontal">
+                                <dt><a href="#"><img src="/assets/img/sliders/elastislide/6.jpg" alt="" /></a></dt>
+                                <dd>
+                                    <p><a href="#">Anim moon officia Unify is an incredibly beautiful responsive Bootstrap Template</a></p>
+                                </dd>
+                            </dl>
+                            <dl class="dl-horizontal">
+                                <dt><a href="#"><img src="/assets/img/sliders/elastislide/10.jpg" alt="" /></a></dt>
+                                <dd>
+                                    <p><a href="#">Anim moon officia Unify is an incredibly beautiful responsive Bootstrap Template</a></p>
+                                </dd>
+                            </dl>
+                            <dl class="dl-horizontal">
+                                <dt><a href="#"><img src="/assets/img/sliders/elastislide/11.jpg" alt="" /></a></dt>
+                                <dd>
+                                    <p><a href="#">Anim moon officia Unify is an incredibly beautiful responsive Bootstrap Template</a></p>
+                                </dd>
+                            </dl>
+                        </div>
+                        <!-- End Recent Blogs -->
+                    </div><!--/col-md-4-->
+
+                    <div class="col-md-4">
+                        <!-- Contact Us -->
+                        <div class="headline"><h2>Contact Us</h2></div>
+                        <address class="md-margin-bottom-40">
+                            25, Lorem Lis Street, Orange <br />
+                            California, US <br />
+                            Phone: 800 123 3456 <br />
+                            Fax: 800 123 3456 <br />
+                            Email: <a href="mailto:info@ngtradeonline.com" class="">info@ngtradeonline.com</a>
+                        </address>
+                        <!-- End Contact Us -->
+                        <!-- Social Links -->
+                        <div class="headline"><h2>Stay Connected</h2></div>
+                        <ul class="social-icons">
+                            <li><a href="#" data-original-title="Feed" class="social_rss"></a></li>
+                            <li><a href="#" data-original-title="Facebook" class="social_facebook"></a></li>
+                            <li><a href="#" data-original-title="Twitter" class="social_twitter"></a></li>
+                            <li><a href="#" data-original-title="Goole Plus" class="social_googleplus"></a></li>
+                            <li><a href="#" data-original-title="Pinterest" class="social_pintrest"></a></li>
+                            <li><a href="#" data-original-title="Linkedin" class="social_linkedin"></a></li>
+                            <li><a href="#" data-original-title="Vimeo" class="social_vimeo"></a></li>
+                        </ul>
+                        <!-- End Social Links -->
+                    </div><!--/col-md-4-->
+                </div>
+            </div>
+        </div><!--/footer-->
+        <!--=== End Footer ===-->
+        <!--=== Copyright ===-->
+        <div class="copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p>
+                            &copy; @DateTime.Now.Year - NgTradeOnline. ALL Rights Reserved.
+                            <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+                        </p>
+                    </div>
+                    <div class="col-md-6">
+                        <a href="#/">
+                            <img class="pull-right" id="logo-footer" src="/assets/img/logo2-default.png" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div><!--/copyright-->
+        <!--=== End Copyright ===-->
+    </div><!--/wrapper-->
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/plugins")
+    @Scripts.Render("~/bundles/angular")
+    @Scripts.Render("~/bundles/app")
+    @RenderSection("scripts", required: false)
+
+    <!--[if lt IE 9]>
+        <script src="/assets/plugins/respond.js"></script>
+    <![endif]-->
+
+</body>
+</html>

@@ -1,6 +1,6 @@
 ﻿using Microsoft.Web.WebPages.OAuth;
 
-namespace NgTrade.App_Start
+namespace NgTrade
 {
     public static class AuthConfig
     {

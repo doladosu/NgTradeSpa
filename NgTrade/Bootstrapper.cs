@@ -24,7 +24,8 @@ namespace NgTrade
             container.RegisterType<INewsRepository, NewsRepository>();
             container.RegisterType<IHoldingRepository, HoldingRepository>();
             container.RegisterType<IOrderRepository, OrderRepository>();
-            container.RegisterType<ISmtpRepository, SmtpRepository>();            
+            container.RegisterType<ISmtpRepository, SmtpRepository>();
+            container.RegisterType<INgTradeRepository, NgTradeRepository>();            
 
             return container;
         }

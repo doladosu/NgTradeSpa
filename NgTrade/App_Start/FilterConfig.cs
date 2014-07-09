@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 
-namespace NgTrade.App_Start
+namespace NgTrade
 {
     public class FilterConfig
     {

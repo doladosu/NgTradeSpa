@@ -425,5 +425,59 @@ namespace NgTrade.Controllers
             SmtpRepository.SendDailyEmail(emailLists);
             return RedirectToAction("Index");
         }
+
+
+
+
+
+
+
+
+
+
+        public ActionResult IndexSpa()
+        {
+            return View();
+        }
+
+        public ActionResult Main()
+        {
+            return View();
+        }
+
+        public ActionResult Dailypricelist()
+        {
+            return View();
+        }
+
+        public ActionResult Nsecontactus()
+        {
+            return View();
+        }
+
+        public ActionResult Nseeducation()
+        {
+            return View();
+        }
+
+        public ActionResult Nsenews()
+        {
+            return View();
+        }
+
+        public ActionResult Research()
+        {
+            return View();
+        }
+
+        public ActionResult NsePrivacy()
+        {
+            return View();
+        }
+
+        public ActionResult NseTerms()
+        {
+            return View();
+        }
     }
 }
