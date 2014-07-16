@@ -125,17 +125,6 @@ namespace NgTrade.Controllers
             return View(homeViewModel);
         }
 
-        [OutputCache(CacheProfile = "StaticPageCache")]
-        public ActionResult About()
-        {
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            return View();
-        }
-
         [HttpPost]
         public ActionResult Contact(ContactViewModel contactVm)
         {
@@ -445,7 +434,7 @@ namespace NgTrade.Controllers
             return View();
         }
 
-        public ActionResult Dailypricelist()
+        public ActionResult NseDailypricelist()
         {
             return View();
         }
@@ -479,5 +468,16 @@ namespace NgTrade.Controllers
         {
             return View();
         }
+
+        public ActionResult About()
+        {
+            return View();
+        }
+
+        public ActionResult Contact()
+        {
+            return View();
+        }
+
     }
 }

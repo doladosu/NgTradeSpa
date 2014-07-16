@@ -1,0 +1,41 @@
+﻿@{
+    Layout = null;
+}
+
+<div class="container content">
+    <div class="panel panel-grey margin-bottom-40">
+        <div class="panel-heading">
+            <h3 class="panel-title">Nigerian Stock Exchange Daily Price List</h3>
+        </div>
+        <div class="panel-body">
+            <input type="text" ng-model="search.Stock" class="search-query" placeholder="Enter Symbol">
+        </div>
+        @*<div class="gridStyle" ng-grid="gridOptions"></div>*@
+
+        <table class="table table-striped invoice-table">
+            <thead>
+                <tr>
+                    <th>Stock</th>
+                    <th>Open</th>
+                    <th>High</th>
+                    <th>Low</th>
+                    <th>Close</th>
+                    <th>Change</th>
+                    <th>Volume</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="dailyPrice in dailyPrices | filter:search:strict">
+                    <td>{{dailyPrice.Stock}}</td>
+                    <td>{{dailyPrice.Open | currency:"NGN "}}</td>
+                    <td>{{dailyPrice.High | currency:"NGN "}}</td>
+                    <td>{{dailyPrice.Low | currency:"NGN "}}</td>
+                    <td>{{dailyPrice.Close | currency:"NGN "}}</td>
+                    <td>{{dailyPrice.Change | currency:"NGN "}}</td>
+                    <td>{{dailyPrice.Volume}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+

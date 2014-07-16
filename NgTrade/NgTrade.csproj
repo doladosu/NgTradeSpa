@@ -1757,18 +1757,20 @@
     <Content Include="Scripts\app\account\login.js" />
     <Content Include="Scripts\app\account\register.js" />
     <Content Include="Scripts\app\app.js" />
-    <Content Include="Scripts\app\controllers.js" />
     <Content Include="Scripts\app\daily\index.js" />
     <Content Include="Scripts\app\demo.js" />
+    <Content Include="Scripts\app\directives\wcUnique.js" />
     <Content Include="Scripts\app\home\about.js" />
     <Content Include="Scripts\app\home\contact.js" />
     <Content Include="Scripts\app\home\main.js" />
     <Content Include="Scripts\app\home\static.js" />
-    <Content Include="Scripts\app\main.js" />
-    <Content Include="Scripts\app\routes.js" />
+    <Content Include="Scripts\app\services\authService.js" />
     <Content Include="Scripts\app\services\datacontext.js" />
-    <Content Include="Scripts\app\services\directives.js" />
+    <Content Include="Scripts\app\services\dialogService.js" />
+    <Content Include="Scripts\app\directives\directives.js" />
     <Content Include="Scripts\app\services\filters.js" />
+    <Content Include="Scripts\app\services\httpInterceptor.js" />
+    <Content Include="Scripts\app\services\modalService.js" />
     <Content Include="Scripts\app\services\services.js" />
     <Content Include="Scripts\app\stockticker.js" />
     <Content Include="Scripts\breeze.angular.js" />
@@ -1971,7 +1973,7 @@
     <Content Include="Views\Error\Index.cshtml" />
     <Content Include="Scripts\version.json" />
     <Content Include="Scripts\toastr.min.js.map" />
-    <Content Include="Views\Home\Dailypricelist.cshtml" />
+    <Content Include="Views\Home\NseDailypricelist.cshtml" />
     <Content Include="Views\Home\Main.cshtml" />
     <Content Include="Views\Home\Nsecontactus.cshtml" />
     <Content Include="Views\Home\Nseeducation.cshtml" />
@@ -1981,6 +1983,8 @@
     <Content Include="Views\Home\Nseterms.cshtml" />
     <Content Include="Views\Shared\_LayoutUnify.cshtml" />
     <Content Include="Views\Home\IndexSpa.cshtml" />
+    <Content Include="Views\Shared\Dialog.cshtml" />
+    <Content Include="Views\Shared\modal.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Helpers\amstock\" />

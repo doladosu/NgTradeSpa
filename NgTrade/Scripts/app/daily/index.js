@@ -5,7 +5,7 @@
  *     dataservice - the application data access service
  *     logger - the application's logging facility
  */
-(function () {
+(function() {
 
     angular.module('main').controller('DailyListController',
     ['$q', '$timeout', 'datacontext', '$scope', controller]);
@@ -13,14 +13,14 @@
     function controller($q, $timeout, datacontext, $scope) {
         // The controller's API to which the view binds
         var vm = this;
-        $scope.usersList = [];
+        $scope.dailyPrices = [];
 
         vm.getDailylist = getDailylist;
 
         getDailylist();
 
         // Listen for property change of ANY entity so we can (optionally) save
-        datacontext.addPropertyChangeHandler(propertyChanged);
+        //datacontext.addPropertyChangeHandler(propertyChanged);
 
         /* Implementation */
 
@@ -36,31 +36,88 @@
 
             function querySucceeded(data) {
                 vm.items = data.results;
-                $scope.usersList = data.results;
-                alert(data.results);
+                $scope.dailyPrices = data.results;
             }
         };
 
-        $scope.userGrid = {
-            data: 'usersList',
-            multiSelect: false,
-            enableColumnResize: false,
-            columnDefs: [
-                { field: 'Date', displayName: 'Date', width: '25%' },
-                { field: 'Stock', displayName: 'Stock', width: '25%' },
-                { field: 'Open', displayName: 'Open', width: '25%' },
-                { field: 'High', displayName: 'High', width: '25%' }
-            ]
-        };
+    //    $scope.filterOptions = {
+    //        filterText: "",
+    //        useExternalFilter: true
+    //    };
+    //    $scope.totalServerItems = 0;
+    //    $scope.pagingOptions = {
+    //        pageSizes: [5, 10, 20],
+    //        pageSize: 5,
+    //        currentPage: 1
+    //    };
 
-        function propertyChanged(changeArgs) {
-            // propertyChanged triggers save attempt UNLESS the property is the 'Id'
-            // because THEN the change is actually the post-save Id-fixup 
-            // rather than user data entry so there is actually nothing to save.
-            if (changeArgs.args.propertyName !== 'Id') {
-                save();
-            }
-        }
+    //    $scope.setPagingData = function (data, page, pageSize) {
+    //        var pagedData = data.slice((page - 1) * pageSize, page * pageSize);
+    //        $scope.myData = pagedData;
+    //        $scope.totalServerItems = data.length;
+    //        if (!$scope.$$phase) {
+    //            $scope.$apply();
+    //        }
+    //    };
+
+    //    $scope.getPagedDataAsync = function (pageSize, page, searchText) {
+    //        setTimeout(function () {
+    //            var data;
+    //            if (searchText) {
+    //                var ft = searchText.toLowerCase();
+    //                $timeout(getDailylistNgGrid, 0);
+
+    //                function getDailylistNgGrid() {
+    //                    datacontext.getDailylist()
+    //                        .then(querySucceeded);
+    //                }
+
+    //                function querySucceeded(dataRe) {
+    //                    data = dataRe.results.filter(function (item) {
+    //                        return JSON.stringify(item).toLowerCase().indexOf(ft) != -1;
+    //                    });
+    //                    $scope.setPagingData(data, page, pageSize);
+    //                }
+    //            } else {
+    //                $timeout(getDailylistNgGridd, 0);
+
+    //                function getDailylistNgGridd() {
+    //                    datacontext.getDailylist()
+    //                        .then(querySucceededd);
+    //                }
+                    
+    //                function querySucceededd(dataRe) {
+    //                    $scope.usersList = [];
+    //                    angular.forEach(dataRe, function (userData) {
+    //                        $scope.usersList.push(userData);
+    //                    });
+    //                    $scope.setPagingData(usersList, page, pageSize);
+    //                }
+    //            }
+    //        }, 0);
+    //    };
+
+    //    $scope.getPagedDataAsync($scope.pagingOptions.pageSize, $scope.pagingOptions.currentPage);
+
+    //    $scope.$watch('pagingOptions', function (newVal, oldVal) {
+    //        if (newVal !== oldVal && newVal.currentPage !== oldVal.currentPage) {
+    //            $scope.getPagedDataAsync($scope.pagingOptions.pageSize, $scope.pagingOptions.currentPage, $scope.filterOptions.filterText);
+    //        }
+    //    }, true);
+    //    $scope.$watch('filterOptions', function (newVal, oldVal) {
+    //        if (newVal !== oldVal) {
+    //            $scope.getPagedDataAsync($scope.pagingOptions.pageSize, $scope.pagingOptions.currentPage, $scope.filterOptions.filterText);
+    //        }
+    //    }, true);
+
+    //    $scope.gridOptions = {
+    //        data: 'myData',
+    //        enablePaging: true,
+    //        showFooter: true,
+    //        totalServerItems: 'totalServerItems',
+    //        pagingOptions: $scope.pagingOptions,
+    //        filterOptions: $scope.filterOptions
+    //    };
     }
 
 })();

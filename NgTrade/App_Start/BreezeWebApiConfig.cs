@@ -16,7 +16,7 @@ namespace NgTrade {
     public static void RegisterBreezePreStart() {
       GlobalConfiguration.Configuration.Routes.MapHttpRoute(
           name: "BreezeApi",
-          routeTemplate: "breeze/{controller}/{action}"
+          routeTemplate: "wapi/{controller}/{action}"
       );
     }
   }

@@ -1,16 +1,16 @@
-﻿appRoot.controller('StockTickerController', function ($scope, stockTickerData) {
+﻿appRoot.controller('StockTickerController', function($scope, stockTickerData) {
     $scope.stocks = [];
     $scope.marketIsOpen = false;
 
-    $scope.openMarket = function () {
+    $scope.openMarket = function() {
         stockTickerData.openMarket();
     }
 
-    $scope.closeMarket = function () {
+    $scope.closeMarket = function() {
         stockTickerData.closeMarket();
     }
 
-    $scope.reset = function () {
+    $scope.reset = function() {
         stockTickerData.reset();
     }
 
@@ -29,28 +29,29 @@
     function setMarketState(isOpen) {
         $scope.marketIsOpen = isOpen;
     }
+
     stockTickerData.initializeClient();
 
-    $scope.$parent.$on('marketOpened', function (e, status) {
-        $scope.$apply(function () {
+    $scope.$parent.$on('marketOpened', function(e, status) {
+        $scope.$apply(function() {
             setMarketState(status);
         });
     });
 
-    $scope.$parent.$on('marketClosed', function (e, status) {
-        $scope.$apply(function () {
+    $scope.$parent.$on('marketClosed', function(e, status) {
+        $scope.$apply(function() {
             setMarketState(!status);
         });
     });
 
-    $scope.$parent.$on('updateStock', function (e, stock) {
-        $scope.$apply(function () {
+    $scope.$parent.$on('updateStock', function(e, stock) {
+        $scope.$apply(function() {
             replaceStock(stock);
         });
     });
 
-    $scope.$parent.$on('setStocks', function (e, stocks) {
-        $scope.$apply(function () {
+    $scope.$parent.$on('setStocks', function(e, stocks) {
+        $scope.$apply(function() {
             assignStocks(stocks);
         });
     });
