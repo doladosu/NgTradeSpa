@@ -33,7 +33,7 @@ namespace NgTrade
 
             bundles.Add(new ScriptBundle("~/bundles/angular").Include(
                "~/Scripts/angular.js",
-               "~/Scripts/angular-ng-grid.js",
+               "~/Scripts/ng-grid.js",
                "~/Scripts/angular-resource.js",
                "~/Scripts/angular-route.js",
                "~/Scripts/q.min.js",
@@ -75,7 +75,8 @@ namespace NgTrade
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                         "~/Content/themes/default/bootstrap.min.css",
-                        "~/Content/themes/default/bootstrap-responsive.min.css"));
+                        "~/Content/themes/default/bootstrap-responsive.min.css",
+                        "~/Content/ng-grid.css"));
 
             bundles.Add(new StyleBundle("~/Content/css/unify").Include(
                 "~/assets/plugins/bootstrap/css/bootstrap.css",
@@ -88,7 +89,8 @@ namespace NgTrade
                 "~/assets/css/themes/headers/default.css",
                 "~/assets/css/pages/page_contact.css",
                 "~/assets/css/themes/default.css",
-                "~/assets/css/custom.css"));
+                "~/assets/css/custom.css",
+                "~/Content/ng-grid.css"));
 
             bundles.Add(new StyleBundle("~/Content/themes/base/css").Include(
                         "~/Content/themes/default/bootstrap.min.css",

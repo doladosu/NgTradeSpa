@@ -6,7 +6,7 @@ appRoot
             $routeProvider
                 .when('/home', { templateUrl: '/home/main', controller: 'MainController' })
                 .when('/nsecontactus', { templateUrl: '/home/contact', controller: 'ContactController' })
-                .when('/about', { templateUrl: '/home/about', controller: 'AboutController' })
+                .when('/about', { templateUrl: '/home/about', controller: 'StaticController' })
                 .when('/nsecontactus', { templateUrl: '/home/nsecontactus', controller: 'ContactController' })
                 .when('/nseeducation', { templateUrl: '/home/nseeducation', controller: 'StaticController', secure: true })
                 .when('/nsenews', { templateUrl: '/home/nsenews', controller: 'StaticController' })

@@ -63,16 +63,10 @@
                                     Home
                                 </a>
                             </li>
-                            <li class="dropdown" data-ng-class="{active : activeViewPath==='/dailypricelist' || activeViewPath==='/daygainers' || activeViewPath==='/daylosers' }">
-                                <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
+                            <li data-ng-class="{active : activeViewPath==='/dailypricelist' || activeViewPath==='/daygainers' || activeViewPath==='/daylosers' }">
+                                <a href="#/dailypricelist">
                                     Daily Price List
                                 </a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#/dailypricelist">Daily Price List</a></li>
-                                    <li><a href="#/daygainers">Day Gainers</a></li>
-                                    <li><a href="#/daylosers">Day Losers</a></li>
-                                    <li><a href="#/research">Research</a></li>
-                                </ul>
                             </li>
                             <li data-ng-class="{active : activeViewPath==='/nsenews'}">
                                 <a href="#/nsenews" class="dropdown-toggle" data-toggle="dropdown">

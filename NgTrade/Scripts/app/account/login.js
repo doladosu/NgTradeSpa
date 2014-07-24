@@ -5,17 +5,17 @@
 //        });
 //    }]);
 
-(function () {
+(function() {
 
-    var loginController = function ($scope, $location, $routeParams, authService) {
+    var loginController = function($scope, $location, $routeParams, authService) {
         var path = '/';
-        $scope.email = null;
+        $scope.username = null;
         $scope.password = null;
         $scope.errorMessage = null;
         $scope.isEmailValid = true;
 
-        $scope.login = function () {
-            authService.login($scope.email, $scope.password).then(function (status) {
+        $scope.login = function() {
+            authService.login($scope.username, $scope.password).then(function(status) {
                 //$routeParams.redirect will have the route
                 //they were trying to go to initially
                 if (!status) {

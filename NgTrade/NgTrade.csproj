@@ -1431,6 +1431,8 @@
     <Content Include="assets\plugins\vector-map\tests\markers.html" />
     <Content Include="assets\plugins\vector-map\tests\reverse-projection.html" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\ng-grid.css" />
+    <Content Include="Content\ng-grid.min.css" />
     <Content Include="Content\themes\base\images\animated-overlay.gif" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
@@ -1901,6 +1903,8 @@
     <Content Include="Scripts\knockout-3.1.0.js" />
     <Content Include="Scripts\modernizr-2.7.2.js" />
     <Content Include="Scripts\news.js" />
+    <Content Include="Scripts\ng-grid.js" />
+    <Content Include="Scripts\ng-grid.min.js" />
     <Content Include="Scripts\ngtrade.index.js" />
     <Content Include="Scripts\q.js" />
     <Content Include="Scripts\q.min.js" />
