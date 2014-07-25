@@ -29,14 +29,16 @@
         <div class="header">
             <!-- Topbar -->
             <div class="topbar">
-                <div class="container">
+                <div class="container" data-ng-controller="NavbarController">
                     <!-- Topbar Navigation -->
                     <ul class="loginbar pull-right">
                         <li><a href="page_faq.html">Help</a></li>
                         <li class="topbar-devider"></li>
-                        <li><a href="#/login">Login</a></li>
+                        <li id="nav-login" data-ng-click="loginOrOut()">
+                            <a href="#/login">{{ loginLogoutText }}</a>
+                        </li>
                         <li class="topbar-devider"></li>
-                        <li><a href="#/register">Register</a></li>
+                        <li><a href="#/login">Register</a></li>
                     </ul>
                     <!-- End Topbar Navigation -->
                 </div>

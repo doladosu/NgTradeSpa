@@ -7,14 +7,14 @@
 
 (function() {
 
-    var loginController = function ($scope, $location, $routeParams, authService, $window) {
+    var loginController = function ($scope, $location, $window, $routeParams, authService) {
 
         $scope.$root.title = 'NgTradeOnline - Login';
         $scope.$on('$viewContentLoaded', function () {
             $window.ga('send', 'pageview', { 'page': $location.path(), 'title': $scope.$root.title });
         });
 
-        var path = '/';
+        var path = '#/account';
         $scope.username = null;
         $scope.password = null;
         $scope.errorMessage = null;
@@ -22,8 +22,6 @@
 
         $scope.login = function() {
             authService.login($scope.username, $scope.password).then(function(status) {
-                //$routeParams.redirect will have the route
-                //they were trying to go to initially
                 if (!status) {
                     $scope.errorMessage = 'Unable to login';
                     return;

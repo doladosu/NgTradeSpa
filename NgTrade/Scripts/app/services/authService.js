@@ -1,7 +1,7 @@
 ﻿(function() {
 
     var authFactory = function($http, $rootScope) {
-        var serviceBase = '/api/dataservice/',
+        var serviceBase = '/api/auth/',
             factory = {
                 loginPath: '/login',
                 user: {
@@ -10,10 +10,10 @@
                 }
             };
 
-        factory.login = function(email, password) {
-            return $http.post(serviceBase + 'login', { userLogin: { userName: email, password: password } }).then(
+        factory.login = function(username, password) {
+            return $http.post(serviceBase + 'login', { userName: username, Password: password }).then(
                 function(results) {
-                    var loggedIn = results.data.status;;
+                    var loggedIn = results.data == "true";;
                     changeAuth(loggedIn);
                     return loggedIn;
                 });
@@ -22,7 +22,7 @@
         factory.logout = function() {
             return $http.post(serviceBase + 'logout').then(
                 function(results) {
-                    var loggedIn = !results.data.status;
+                    var loggedIn = results.data == "true";
                     changeAuth(loggedIn);
                     return loggedIn;
                 });

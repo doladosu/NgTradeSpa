@@ -271,6 +271,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Bootstrapper.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AuthController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\DailyController.cs" />
     <Compile Include="Controllers\DataController.cs" />
@@ -1778,6 +1779,7 @@
     <Content Include="Scripts\app\home\contact.js" />
     <Content Include="Scripts\app\home\main.js" />
     <Content Include="Scripts\app\home\static.js" />
+    <Content Include="Scripts\app\navbarController.js" />
     <Content Include="Scripts\app\services\authService.js" />
     <Content Include="Scripts\app\services\datacontext.js" />
     <Content Include="Scripts\app\services\dialogService.js" />

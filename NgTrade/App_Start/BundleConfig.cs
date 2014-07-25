@@ -54,6 +54,7 @@ namespace NgTrade
                 "~/Scripts/app/services/directives.js",
                 "~/Scripts/app/services/datacontext.js",
                 "~/Scripts/app/services/authService.js",
+                "~/Scripts/app/navbarController.js",
                 "~/Scripts/app/services/dialogService.js",
                 "~/Scripts/app/services/httpInterceptor.js",
                 "~/Scripts/app/services/modalService.js",
