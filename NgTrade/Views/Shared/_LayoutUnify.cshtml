@@ -100,7 +100,7 @@
                                     <div class="input-group animated fadeindown" data-ng-controller="MainController">
                                         <input type="text" class="form-control" placeholder="Enter stock name" ng-model="selectedStock" data-animation="am-flip-x" ng-options="stock for stock in getStock($viewValue)" bs-typeahead="typeahead">
                                         <span class="input-group-btn">
-                                            <button class="btn-u" type="button">Search</button>
+                                            <button class="btn-u" type="button" ng-click="researchStock()">Search</button>
                                         </span>
                                     </div>
                                 </div>

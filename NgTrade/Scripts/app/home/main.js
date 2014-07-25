@@ -25,5 +25,10 @@
                         return stocksList;
                     });
             };
+
+
+            $scope.researchStock = function () {
+                alert($scope.selectedStock);
+            };
         }
     ]);
