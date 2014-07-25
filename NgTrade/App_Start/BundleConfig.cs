@@ -66,7 +66,8 @@ namespace NgTrade
                 "~/Scripts/app/home/static.js",
                 "~/Scripts/app/daily/index.js",
                 "~/Scripts/app/account/login.js",
-                "~/Scripts/app/account/register.js"
+                "~/Scripts/app/account/register.js",
+                "~/Scripts/app/user/account.js"
                 ));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(

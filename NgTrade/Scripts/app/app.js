@@ -21,6 +21,7 @@ appRoot
                 .when('/register', { templateUrl: '/account/register', controller: 'RegisterController' })
                 .when('/privacy', { templateUrl: '/home/nseprivacy', controller: 'StaticController' })
                 .when('/terms', { templateUrl: '/home/nseterms', controller: 'StaticController' })
+                .when('/account', { templateUrl: '/user/account', controller: 'AccountController', secure: true })
                 .otherwise({ redirectTo: '/home' });
         }
     ])

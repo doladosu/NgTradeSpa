@@ -1,6 +1,6 @@
 ﻿(function() {
 
-    var navbarController = function($scope, $location, authService) {
+    var navbarController = function($scope, $location, authService, $routeParams) {
         var appTitle = 'NgTradeOnline';
         $scope.isCollapsed = false;
         $scope.appTitle = appTitle;
@@ -22,7 +22,8 @@
         };
 
         function redirectToLogin() {
-            var path = '/login' + $location.$$path;
+            $routeParams.redirect = $location.$$path;
+            var path = '/login';
             $location.replace();
             $location.path(path);
         }
@@ -43,7 +44,7 @@
 
     };
 
-    navbarController.$inject = ['$scope', '$location', 'authService'];
+    navbarController.$inject = ['$scope', '$location', 'authService', '$routeParams'];
 
     angular.module('main').controller('NavbarController', navbarController);
 

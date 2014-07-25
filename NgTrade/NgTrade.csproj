@@ -277,6 +277,7 @@
     <Compile Include="Controllers\DataController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="DataHub\StockTicker.cs" />
     <Compile Include="DataHub\StockTickerHub.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
@@ -1789,6 +1790,7 @@
     <Content Include="Scripts\app\services\modalService.js" />
     <Content Include="Scripts\app\services\services.js" />
     <Content Include="Scripts\app\stockticker.js" />
+    <Content Include="Scripts\app\user\account.js" />
     <Content Include="Scripts\breeze.angular.js" />
     <Content Include="Scripts\breeze.debug.js" />
     <Content Include="Scripts\breeze.directives.validation.js" />
@@ -2003,6 +2005,7 @@
     <Content Include="Views\Home\IndexSpa.cshtml" />
     <Content Include="Views\Shared\Dialog.cshtml" />
     <Content Include="Views\Shared\modal.cshtml" />
+    <Content Include="Views\User\Account.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Helpers\amstock\" />
