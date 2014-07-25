@@ -2,7 +2,11 @@
     angular.module('main').controller('DailyListController',
     ['$q', '$timeout', 'datacontext', '$scope', controller]);
 
-    function controller($q, $timeout, datacontext, $scope) {
+    function controller($q, $timeout, datacontext, $scope, $location, $window) {
+        $scope.$root.title = 'NgTradeOnline';
+        $scope.$on('$viewContentLoaded', function () {
+            $window.ga('send', 'pageview', { 'page': $location.path(), 'title': $scope.$root.title });
+        });
         $scope.columnDefs = [
             { field: 'Stock', displayName: 'Stock' },
             { field: 'Open', displayName: 'Open' },

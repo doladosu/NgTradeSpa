@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using System.Web.Configuration
+<!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
@@ -97,7 +98,7 @@
                                 <i class="search fa fa-search search-btn"></i>
                                 <div class="search-open">
                                     <div class="input-group animated fadeInDown">
-                                        <input type="text" class="form-control" placeholder="Enter stock name">
+                                        <input type="text" class="form-control" autocomplete="" placeholder="Enter stock name">
                                         <span class="input-group-btn">
                                             <button class="btn-u" type="button">Search</button>
                                         </span>
@@ -219,6 +220,14 @@
     <!--[if lt IE 9]>
         <script src="/assets/plugins/respond.js"></script>
     <![endif]-->
-
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+        ga('create', '@WebConfigurationManager.AppSettings["GoogleAnalytics:PropertyID"]', '@(Request.IsLocal ? "none" : "auto")');
+    </script>
 </body>
 </html>

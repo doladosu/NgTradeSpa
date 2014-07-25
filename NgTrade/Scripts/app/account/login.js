@@ -7,7 +7,13 @@
 
 (function() {
 
-    var loginController = function($scope, $location, $routeParams, authService) {
+    var loginController = function ($scope, $location, $routeParams, authService, $window) {
+
+        $scope.$root.title = 'NgTradeOnline - Login';
+        $scope.$on('$viewContentLoaded', function () {
+            $window.ga('send', 'pageview', { 'page': $location.path(), 'title': $scope.$root.title });
+        });
+
         var path = '/';
         $scope.username = null;
         $scope.password = null;
