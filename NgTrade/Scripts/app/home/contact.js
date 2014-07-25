@@ -1,6 +1,6 @@
 ﻿angular.module('main')
     .controller('ContactController', [
-        '$scope', function($scope, $location, $window) {
+        '$scope', '$location', '$window', function ($scope, $location, $window) {
             $scope.$root.title = 'NgTradeOnline';
             $scope.$on('$viewContentLoaded', function() {
                 App.init();

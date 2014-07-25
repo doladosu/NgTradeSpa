@@ -1,6 +1,6 @@
 ﻿(function() {
     angular.module('main').controller('DailyListController',
-    ['$q', '$timeout', 'datacontext', '$scope', controller]);
+    ['$q', '$timeout', 'datacontext', '$scope', '$location', '$window', controller]);
 
     function controller($q, $timeout, datacontext, $scope, $location, $window) {
         $scope.$root.title = 'NgTradeOnline';

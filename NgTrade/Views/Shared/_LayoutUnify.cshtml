@@ -17,7 +17,7 @@
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
-
+    
     @Styles.Render("~/Content/css/unify")
 </head>
 <body data-ng-app="main" data-ng-controller="RootController">
@@ -97,8 +97,8 @@
                             <li>
                                 <i class="search fa fa-search search-btn"></i>
                                 <div class="search-open">
-                                    <div class="input-group animated fadeInDown">
-                                        <input type="text" class="form-control" autocomplete="" placeholder="Enter stock name">
+                                    <div class="input-group animated fadeindown" data-ng-controller="MainController">
+                                        <input type="text" class="form-control" placeholder="Enter stock name" ng-model="selectedStock" data-animation="am-flip-x" ng-options="stock for stock in getStock($viewValue)" bs-typeahead="typeahead">
                                         <span class="input-group-btn">
                                             <button class="btn-u" type="button">Search</button>
                                         </span>

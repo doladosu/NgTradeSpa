@@ -1,4 +1,4 @@
-﻿var appRoot = angular.module('main', ['ngRoute', 'ngGrid', 'ngResource', 'breeze.angular']);//, 'angularStart.filters']); 
+﻿var appRoot = angular.module('main', ['ngRoute', 'ngGrid', 'ngResource', 'breeze.angular', 'ngAnimate', 'ngSanitize', 'mgcrea.ngStrap']);//, 'angularStart.filters']); 
 
 appRoot
     .config([

@@ -32,16 +32,20 @@ namespace NgTrade
                 "~/assets/js/pages/page_contacts.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/angular").Include(
-               "~/Scripts/angular.js",
-               "~/Scripts/ng-grid.js",
-               "~/Scripts/angular-resource.js",
-               "~/Scripts/angular-route.js",
+               "~/Scripts/angular.min.js",
+               "~/Scripts/angular-animate.min.js",
+               "~/Scripts/ng-grid.min.js",
+               "~/Scripts/angular-resource.min.js",
+               "~/Scripts/angular-route.min.js",
+               "~/Scripts/angular-sanitize.min.js",
+               "~/Scripts/angular-strap.min.js",
+               "~/Scripts/angular-strap.tpl.min.js",
                "~/Scripts/q.min.js",
                "~/Scripts/breeze.min.js",
                "~/Scripts/breeze.angular.js",
                "~/Scripts/breeze.savequeuing.js",
                "~/Scripts/breeze.to$q.shim.js",
-               "~/Scripts/toastr.js",
+               "~/Scripts/toastr.min.js",
                "~/Scripts/phelper.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/app").Include(
@@ -90,7 +94,9 @@ namespace NgTrade
                 "~/assets/css/pages/page_contact.css",
                 "~/assets/css/themes/default.css",
                 "~/assets/css/custom.css",
-                "~/Content/ng-grid.css"));
+                "~/Content/ng-grid.css",
+                "~/Content/bootstrap-theme.min.css",
+                "~/Content/bootstrap.min.css"));
 
             bundles.Add(new StyleBundle("~/Content/themes/base/css").Include(
                         "~/Content/themes/default/bootstrap.min.css",

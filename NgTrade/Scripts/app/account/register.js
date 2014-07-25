@@ -1,4 +1,4 @@
 ﻿angular.module('main')
-    .controller('RegisterController', ['$scope', function ($scope) {
+    .controller('RegisterController', ['$scope', '$location', '$window', function ($scope) {
 
     }]);

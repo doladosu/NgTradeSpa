@@ -38,7 +38,7 @@
         };
     };
 
-    loginController.$inject = ['$scope', '$location', '$routeParams', 'authService'];
+    loginController.$inject = ['$scope', '$location', '$window', '$routeParams', 'authService'];
 
     angular.module('main')
         .controller('LoginController', loginController);
