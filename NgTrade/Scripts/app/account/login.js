@@ -14,7 +14,7 @@
             $window.ga('send', 'pageview', { 'page': $location.path(), 'title': $scope.$root.title });
         });
 
-        var path = '/account';
+        var path = '/account/index';
         $scope.username = null;
         $scope.password = null;
         $scope.errorMessage = null;
@@ -30,8 +30,8 @@
                 if (status && $routeParams && $routeParams.redirect) {
                     path = $routeParams.redirect;
                 }
-
-                $location.path(path);
+                $window.location.href = path;
+               // $location.path(path);
             });
         };
     };

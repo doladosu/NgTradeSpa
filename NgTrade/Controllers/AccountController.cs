@@ -17,7 +17,7 @@ using NgTrade.Models;
 
 namespace NgTrade.Controllers
 {
-    [Authorize]
+    //[Authorize]
     public class AccountController : BaseController
     {
         private const int PageSize = 5;
@@ -28,50 +28,50 @@ namespace NgTrade.Controllers
 
         public ActionResult Index()
         {
-            if (LoggedInSubscriber == null && User.Identity.IsAuthenticated)
-            {
-                var membershipUser = Membership.GetUser();
-                if (membershipUser != null)
-                {
-                    if (membershipUser.ProviderUserKey != null)
-                    {
-                        var subscriberId = membershipUser.ProviderUserKey.ToString();
-                        LoggedInSubscriber = AccountRepository.GetAccountProfile(Int32.Parse(subscriberId));
-                    }
-                }
-            }
-            if (LoggedInSubscriber == null)
-            {
-                return RedirectToAction("LogOff");
-            }
-            var accountProfile = AccountRepository.GetAccountProfile(LoggedInSubscriber.UserId);
-            var holdings = HoldingRepository.GetHoldings(accountProfile.UserId);
-            var holdingSum = 0.00;
-            if (holdings.Any())
-            {
-                foreach (var holding in holdings)
-                {
-                    var quote = QuoteRepository.GetQuote(holding.Symbol);
-                    holdingSum = holdingSum + Convert.ToDouble(holding.Quantity*quote.Close);
-                }
-            }
-            var accountViewModel = new AccountViewModel
-            {
-                AccountNumber = LoggedInSubscriber.AccountNumber.GetValueOrDefault(),
-                Address1 = accountProfile.Address1,
-                Address2 = accountProfile.Address2,
-                City = accountProfile.City,
-                State = accountProfile.State,
-                Country = accountProfile.Country,
-                FirstName = accountProfile.FirstName,
-                LastName = accountProfile.LastName,
-                Email = accountProfile.Email,
-                Status = accountProfile.Verified.GetValueOrDefault(),
-                Phone = accountProfile.Phone1,
-                Balance = accountProfile.Balance.GetValueOrDefault() + Convert.ToDecimal(holdingSum),
-                AccountName = accountProfile.UserName
-            };
-            return View(accountViewModel);
+            //if (LoggedInSubscriber == null && User.Identity.IsAuthenticated)
+            //{
+            //    var membershipUser = Membership.GetUser();
+            //    if (membershipUser != null)
+            //    {
+            //        if (membershipUser.ProviderUserKey != null)
+            //        {
+            //            var subscriberId = membershipUser.ProviderUserKey.ToString();
+            //            LoggedInSubscriber = AccountRepository.GetAccountProfile(Int32.Parse(subscriberId));
+            //        }
+            //    }
+            //}
+            //if (LoggedInSubscriber == null)
+            //{
+            //    return RedirectToAction("LogOff");
+            //}
+            //var accountProfile = AccountRepository.GetAccountProfile(LoggedInSubscriber.UserId);
+            //var holdings = HoldingRepository.GetHoldings(accountProfile.UserId);
+            //var holdingSum = 0.00;
+            //if (holdings.Any())
+            //{
+            //    foreach (var holding in holdings)
+            //    {
+            //        var quote = QuoteRepository.GetQuote(holding.Symbol);
+            //        holdingSum = holdingSum + Convert.ToDouble(holding.Quantity*quote.Close);
+            //    }
+            //}
+            //var accountViewModel = new AccountViewModel
+            //{
+            //    AccountNumber = LoggedInSubscriber.AccountNumber.GetValueOrDefault(),
+            //    Address1 = accountProfile.Address1,
+            //    Address2 = accountProfile.Address2,
+            //    City = accountProfile.City,
+            //    State = accountProfile.State,
+            //    Country = accountProfile.Country,
+            //    FirstName = accountProfile.FirstName,
+            //    LastName = accountProfile.LastName,
+            //    Email = accountProfile.Email,
+            //    Status = accountProfile.Verified.GetValueOrDefault(),
+            //    Phone = accountProfile.Phone1,
+            //    Balance = accountProfile.Balance.GetValueOrDefault() + Convert.ToDecimal(holdingSum),
+            //    AccountName = accountProfile.UserName
+            //};
+            return View();
         }
 
         public ActionResult Portfolio(int? page, int? ot)
