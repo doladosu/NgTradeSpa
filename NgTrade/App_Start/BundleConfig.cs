@@ -70,6 +70,28 @@ namespace NgTrade
                 "~/Scripts/app/user/account.js"
                 ));
 
+            bundles.Add(new ScriptBundle("~/bundles/accountapp").Include(
+                "~/Scripts/accountapp/app.config.js",
+                "~/Scripts/accountapp/app.js",
+                "~/scripts/accountapp/ng/ng.app.js",
+                "~/scripts/accountapp/ng/ng.controllers.js",
+                "~/scripts/accountapp/ng/ng.directives.js",
+                "~/scripts/accountapp/ng/ng.services.js",
+                "~/scripts/accountapp/plugin/jquery-touch/jquery.ui.touch-punch.min.js",
+                "~/scripts/accountapp/notification/SmartNotification.min.js",
+                "~/scripts/accountapp/smartwidgets/jarvis.widget.min.js",
+                "~/scripts/accountapp/plugin/easy-pie-chart/jquery.easy-pie-chart.min.js",
+                "~/scripts/accountapp/plugin/sparkline/jquery.sparkline.min.js",
+                "~/scripts/accountapp/plugin/jquery-validate/jquery.validate.min.js",
+                "~/scripts/accountapp/plugin/masked-input/jquery.maskedinput.min.js",
+                "~/scripts/accountapp/plugin/select2/select2.min.js",
+                "~/scripts/accountapp/plugin/bootstrap-slider/bootstrap-slider.min.js",
+                "~/scripts/accountapp/plugin/msie-fix/jquery.mb.browser.min.js",
+                "~/scripts/accountapp/plugin/fastclick/fastclick.min.js",
+                "~/scripts/accountapp/libs/angular/ui-bootstrap-custom-tpls-0.11.0.js",
+                "~/scripts/accountapp/speech/voicecommand.min.js",
+                "~/scripts/accountapp/ng/plunker.js"
+                ));
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.unobtrusive*",
                         "~/Scripts/jquery.validate*"));
@@ -99,6 +121,14 @@ namespace NgTrade
                 "~/Content/ng-grid.css",
                 "~/Content/bootstrap-theme.min.css",
                 "~/Content/bootstrap.min.css"));
+
+            bundles.Add(new StyleBundle("~/Content/css/account").Include(
+                "~/Content/bootstrap.min.css",
+                "~/content/account/css/smartadmin-production.min.css",
+                "~/assets/plugins/font-awesome/css/font-awesome.css",
+                "~/content/account/css/smartadmin-skins.min.css",
+                "~/content/account/css/smartadmin-rtl.min.css"
+                ));
 
             bundles.Add(new StyleBundle("~/Content/themes/base/css").Include(
                         "~/Content/themes/default/bootstrap.min.css",

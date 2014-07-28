@@ -14,9 +14,9 @@ namespace NgTrade.Controllers
     {
         private readonly INgTradeRepository _ngTradeRepository;
 
-        public DataController()
+        public DataController(INgTradeRepository ngTradeRepository)
         {
-            _ngTradeRepository = new NgTradeRepository();
+            _ngTradeRepository = ngTradeRepository;
         }
 
         [HttpGet]

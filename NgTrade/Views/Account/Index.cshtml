@@ -7,22 +7,13 @@
         <meta charset="utf-8">
         <!--<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">-->
 
-        <title> SmartAdmin </title>
+        <title> NgTradeOnline </title>
         <meta name="description" content="">
         <meta name="author" content="">
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-        <!-- Basic Styles -->
-        <link rel="stylesheet" type="text/css" media="screen" href="/content/account/css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" media="screen" href="/content/account/css/font-awesome.min.css">
-
-        <!-- SmartAdmin Styles : Please note (smartadmin-production.css) was created using LESS variables -->
-        <link rel="stylesheet" type="text/css" media="screen" href="/content/account/css/smartadmin-production.min.css">
-        <link rel="stylesheet" type="text/css" media="screen" href="/content/account/css/smartadmin-skins.min.css">
-
-        <!-- SmartAdmin RTL Support is under construction-->
-        <link rel="stylesheet" type="text/css" media="screen" href="/content/account/css/smartadmin-rtl.min.css">
+        @Styles.Render("~/Content/css/account")
 
         <!-- We recommend you use "your_style.css" to override SmartAdmin
             specific styles this will also ensure you retrain your customization with each SmartAdmin update.
@@ -89,85 +80,14 @@
         <!-- PACE LOADER - turn this on if you want ajax loading to show (caution: uses lots of memory on iDevices)
             <script data-pace-options='{ "restartOnRequestAfter": true }' src="/scripts/accountapp/plugin/pace/pace.min.js"></script>-->
         <!-- Link to Google CDN's jQuery + jQueryUI; fall back to local -->
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-        <script>
-            if (!window.jQuery) {
-                document.write('<script src="/scripts/jquery-2.1.1.min.js"><\/script>');
-            }
-        </script>
-
-        <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
-        <script>
-            if (!window.jQuery.ui) {
-                document.write('<script src="/scripts/jquery-ui-1.10.4.min.js"><\/script>');
-            }
-        </script>
-
-        <!-- MAIN APP JS FILE -->
-        <script src="/Scripts/accountapp/app.config.js"></script>
-
-        <!-- JS TOUCH : include this plugin for mobile drag / drop touch events-->
-        <script src="/scripts/accountapp/plugin/jquery-touch/jquery.ui.touch-punch.min.js"></script>
-
-        <!-- BOOTSTRAP JS -->
-        <script src="/scripts/bootstrap.min.js"></script>
-
-        <!-- CUSTOM NOTIFICATION -->
-        <script src="/scripts/accountapp/notification/SmartNotification.min.js"></script>
-
-        <!-- JARVIS WIDGETS -->
-        <script src="/scripts/accountapp/smartwidgets/jarvis.widget.min.js"></script>
-
-        <!-- EASY PIE CHARTS -->
-        <script src="/scripts/accountapp/plugin/easy-pie-chart/jquery.easy-pie-chart.min.js"></script>
-
-        <!-- SPARKLINES -->
-        <script src="/scripts/accountapp/plugin/sparkline/jquery.sparkline.min.js"></script>
-
-        <!-- JQUERY VALIDATE -->
-        <script src="/scripts/accountapp/plugin/jquery-validate/jquery.validate.min.js"></script>
-
-        <!-- JQUERY MASKED INPUT -->
-        <script src="/scripts/accountapp/plugin/masked-input/jquery.maskedinput.min.js"></script>
-
-        <!-- JQUERY SELECT2 INPUT -->
-        <script src="/scripts/accountapp/plugin/select2/select2.min.js"></script>
-
-        <!-- JQUERY UI + Bootstrap Slider -->
-        <script src="/scripts/accountapp/plugin/bootstrap-slider/bootstrap-slider.min.js"></script>
-
-        <!-- browser msie issue fix -->
-        <script src="/scripts/accountapp/plugin/msie-fix/jquery.mb.browser.min.js"></script>
-
-        <!-- FastClick: For mobile devices: you can disable this in app.js -->
-        <script src="/scripts/accountapp/plugin/fastclick/fastclick.min.js"></script>
-
+        
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/angular")
+        @Scripts.Render("~/bundles/accountapp")
+        
         <!--[if IE 8]>
-            <h1>Your browser is out of date, please update your browser by going to www.microsoft.com/download</h1>
+        <h1>Your browser is out of date, please update your browser by going to www.microsoft.com/download</h1>
         <![endif]-->
-        <!-- AngularJS -->
-        <script src="/scripts/angular.js"></script>
-        <script src="/scripts/angular-route.js"></script>
-        <script src="/scripts/angular-animate.js"></script>
-        <script src="/scripts/accountapp/libs/angular/ui-bootstrap-custom-tpls-0.11.0.js"></script>
-
-        <!-- ANGULAR: Handled via "ribbon" directive
-            <script src="js/demo.js"></script>-->
-        <!-- MAIN APP JS FILE -->
-        <script src="/Scripts/accountapp/app.js"></script>
-
-        <!-- MAIN ANGULAR JS FILE -->
-        <script src="/scripts/accountapp/ng/ng.app.js"></script>
-        <script src="/scripts/accountapp/ng/ng.controllers.js"></script>
-        <script src="/scripts/accountapp/ng/ng.directives.js"></script>
-
-        <!-- PLUNKER -->
-        <script src="/scripts/accountapp/ng/plunker.js"></script>
-
-        <!-- ENHANCEMENT PLUGINS : NOT A REQUIREMENT -->
-        <!-- Voice command : plugin -->
-        <script src="/scripts/accountapp/speech/voicecommand.min.js"></script>
-
         <!-- Your GOOGLE ANALYTICS CODE Below -->
         <script type="text/javascript">
 

@@ -13,7 +13,7 @@
         factory.login = function(username, password) {
             return $http.post(serviceBase + 'login', { userName: username, Password: password }).then(
                 function(results) {
-                    var loggedIn = results.data == "true";;
+                    var loggedIn = results.data.userId > 0;;
                     changeAuth(loggedIn);
                     return loggedIn;
                 });
@@ -22,7 +22,7 @@
         factory.logout = function() {
             return $http.post(serviceBase + 'logout').then(
                 function(results) {
-                    var loggedIn = results.data == "true";
+                    var loggedIn = results.data.userId > 0;
                     changeAuth(loggedIn);
                     return loggedIn;
                 });

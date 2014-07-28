@@ -246,6 +246,9 @@
     <Reference Include="Unity.Mvc3">
       <HintPath>..\packages\Unity.Mvc3.1.2\lib\net40\Unity.Mvc3.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.WebApi">
+      <HintPath>..\packages\Unity.WebAPI.5.1\lib\net45\Unity.WebApi.dll</HintPath>
+    </Reference>
     <Reference Include="WebActivator">
       <HintPath>..\packages\WebActivator.1.5.3\lib\net40\WebActivator.dll</HintPath>
     </Reference>
@@ -268,6 +271,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Bootstrapper.cs" />
     <Compile Include="Controllers\AccountController.cs" />
@@ -294,6 +298,7 @@
     <Compile Include="Models\Info\PortfolioModel.cs" />
     <Compile Include="Models\Info\QuoteSector.cs" />
     <Compile Include="Models\Info\StockModel.cs" />
+    <Compile Include="Models\Info\UserDashboardInfo.cs" />
     <Compile Include="Models\Repo\Impl\AccountRepository.cs" />
     <Compile Include="Models\Repo\Impl\HoldingRepository.cs" />
     <Compile Include="Models\Repo\Impl\NewsRepository.cs" />
@@ -1692,6 +1697,7 @@
     <Content Include="Content\account\views\misc\other\timeline.html" />
     <Content Include="Content\account\views\misc\pricing-table.html" />
     <Content Include="Content\account\views\misc\search.html" />
+    <Content Include="Content\account\views\research.html" />
     <Content Include="Content\account\views\tables\datatables.html" />
     <Content Include="Content\account\views\tables\jqgrid.html" />
     <Content Include="Content\account\views\tables\table.html" />
@@ -2474,6 +2480,7 @@
     <Content Include="Content\account\sound\voice_alert.ogg" />
     <Content Include="Content\account\sound\voice_off.ogg" />
     <Content Include="Content\account\sound\voice_on.ogg" />
+    <Content Include="Scripts\accountapp\ng\ng.services.js" />
     <None Include="Scripts\breeze.intellisense.js" />
     <Content Include="Scripts\AngularUI\ui-router.js" />
     <Content Include="Scripts\AngularUI\ui-router.min.js" />
@@ -2712,7 +2719,6 @@
     <Content Include="Views\Home\IndexSpa.cshtml" />
     <Content Include="Views\Shared\Dialog.cshtml" />
     <Content Include="Views\Shared\modal.cshtml" />
-    <Content Include="Views\User\Account.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Helpers\amstock\" />
