@@ -454,7 +454,7 @@ namespace NgTrade.Controllers
             return View();
         }
 
-        public ActionResult Research()
+        public ActionResult NseResearch()
         {
             return View();
         }

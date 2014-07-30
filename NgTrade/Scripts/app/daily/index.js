@@ -8,7 +8,7 @@
             $window.ga('send', 'pageview', { 'page': $location.path(), 'title': $scope.$root.title });
         });
         $scope.columnDefs = [
-            { field: 'Stock', displayName: 'Stock' },
+            { field: 'Stock', displayName: 'Stock', enableCellEdit: false, cellTemplate: '<div class="ngCellText" ng-class="col.colIndex()"><a href="#research?stock={{row.getProperty(col.field)}}">{{row.getProperty(col.field)}}</a></div>' },
             { field: 'Open', displayName: 'Open' },
             { field: 'High', displayName: 'High' },
             { field: 'Low', displayName: 'Low' },

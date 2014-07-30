@@ -2719,6 +2719,7 @@
     <Content Include="Views\Home\IndexSpa.cshtml" />
     <Content Include="Views\Shared\Dialog.cshtml" />
     <Content Include="Views\Shared\modal.cshtml" />
+    <Content Include="Views\Home\NseResearch.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Helpers\amstock\" />
