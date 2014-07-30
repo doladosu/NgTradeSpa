@@ -7,7 +7,7 @@
 
 (function() {
 
-    var loginController = function ($scope, $location, $window, $routeParams, authService) {
+    var loginController = function ($scope, $location, $window, $routeParams, authService, logger) {
 
         $scope.$root.title = 'NgTradeOnline - Login';
         $scope.$on('$viewContentLoaded', function () {
@@ -23,6 +23,7 @@
         $scope.login = function() {
             authService.login($scope.username, $scope.password).then(function(status) {
                 if (!status) {
+                    logger.error("Please check your username and password", "Login failed");
                     $scope.errorMessage = 'Unable to login';
                     return;
                 }
@@ -36,7 +37,7 @@
         };
     };
 
-    loginController.$inject = ['$scope', '$location', '$window', '$routeParams', 'authService'];
+    loginController.$inject = ['$scope', '$location', '$window', '$routeParams', 'authService', 'logger'];
 
     angular.module('main')
         .controller('LoginController', loginController);

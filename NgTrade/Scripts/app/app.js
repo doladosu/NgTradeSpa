@@ -13,7 +13,7 @@ appRoot
                 .when('/nsefaq', { templateUrl: '/home/nsefaq', controller: 'StaticController' })
                 .when('/nseprivacy', { templateUrl: '/home/nseprivacy', controller: 'StaticController' })
                 .when('/nseterms', { templateUrl: '/home/nseterms', controller: 'StaticController' })
-                .when('/research', { templateUrl: '/home/nseresearch', controller: 'StaticController' })
+                .when('/research', { templateUrl: '/home/nseresearch', controller: 'ResearchController' })
                 .when('/daygainers', { templateUrl: '/home/daygainers', controller: 'StaticController' })
                 .when('/daylosers', { templateUrl: '/home/daylosers', controller: 'StaticController' })
                 .when('/dailypricelist', { templateUrl: '/home/nsedailypricelist', controller: 'DailyListController' })

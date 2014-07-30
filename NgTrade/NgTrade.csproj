@@ -2493,6 +2493,7 @@
     <Content Include="Scripts\app\home\about.js" />
     <Content Include="Scripts\app\home\contact.js" />
     <Content Include="Scripts\app\home\main.js" />
+    <Content Include="Scripts\app\home\research.js" />
     <Content Include="Scripts\app\home\static.js" />
     <Content Include="Scripts\app\navbarController.js" />
     <Content Include="Scripts\app\services\authService.js" />
@@ -2501,6 +2502,7 @@
     <Content Include="Scripts\app\directives\directives.js" />
     <Content Include="Scripts\app\services\filters.js" />
     <Content Include="Scripts\app\services\httpInterceptor.js" />
+    <Content Include="Scripts\app\services\logger.js" />
     <Content Include="Scripts\app\services\modalService.js" />
     <Content Include="Scripts\app\services\services.js" />
     <Content Include="Scripts\app\stockticker.js" />

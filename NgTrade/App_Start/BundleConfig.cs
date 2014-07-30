@@ -67,7 +67,9 @@ namespace NgTrade
                 "~/Scripts/app/daily/index.js",
                 "~/Scripts/app/account/login.js",
                 "~/Scripts/app/account/register.js",
-                "~/Scripts/app/user/account.js"
+                "~/Scripts/app/home/research.js",
+                "~/Scripts/app/user/account.js",
+                 "~/Scripts/app/services/logger.js"
                 ));
 
             bundles.Add(new ScriptBundle("~/bundles/accountapp").Include(
@@ -90,7 +92,8 @@ namespace NgTrade
                 "~/scripts/accountapp/plugin/fastclick/fastclick.min.js",
                 "~/scripts/accountapp/libs/angular/ui-bootstrap-custom-tpls-0.11.0.js",
                 "~/scripts/accountapp/speech/voicecommand.min.js",
-                "~/scripts/accountapp/ng/plunker.js"
+                "~/scripts/accountapp/ng/plunker.js",
+                "~/Scripts/app/services/logger.js"
                 ));
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.unobtrusive*",
@@ -119,6 +122,7 @@ namespace NgTrade
                 "~/assets/css/themes/default.css",
                 "~/assets/css/custom.css",
                 "~/Content/ng-grid.css",
+                "~/Content/toastr.css",
                 "~/Content/bootstrap-theme.min.css",
                 "~/Content/bootstrap.min.css"));
 
@@ -127,7 +131,8 @@ namespace NgTrade
                 "~/content/account/css/smartadmin-production.min.css",
                 "~/assets/plugins/font-awesome/css/font-awesome.css",
                 "~/content/account/css/smartadmin-skins.min.css",
-                "~/content/account/css/smartadmin-rtl.min.css"
+                "~/content/account/css/smartadmin-rtl.min.css",
+                "~/Content/toastr.css"
                 ));
 
             bundles.Add(new StyleBundle("~/Content/themes/base/css").Include(
