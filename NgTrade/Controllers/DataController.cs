@@ -1,9 +1,13 @@
-﻿using System.Linq;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Web.Http;
 using Breeze.ContextProvider;
 using Breeze.WebApi2;
+using iTextSharp.text;
 using Newtonsoft.Json.Linq;
 using NgTrade.Models.Data;
+using NgTrade.Models.Info;
 using NgTrade.Models.Repo.Impl;
 using NgTrade.Models.Repo.Interface;
 
@@ -77,6 +81,22 @@ namespace NgTrade.Controllers
         public IQueryable<Quote> Quotes()
         {
             return _ngTradeRepository.Quotes;
+        }
+
+        [HttpGet]
+        public IQueryable<StockChart> QuoteUtcDate()
+        {
+            var quotes = _ngTradeRepository.Quotes.ToList().Where(e => e.Date > DateTime.Now.AddMonths(-6));
+            var stockChartsList = quotes.Select(quote => new StockChart {A = GetTime(quote.Date), B = quote.Open, C = quote.High, D = quote.Low, E = quote.Close, Symbol = quote.Symbol}).ToList();
+            return stockChartsList.AsQueryable();
+        }
+
+        private static Int64 GetTime(DateTime date)
+        {
+            var st = new DateTime(1970, 1, 1);
+            var t = (date.ToUniversalTime() - st);
+            var retval = (Int64)(t.TotalMilliseconds + 0.5);
+            return retval;
         }
 
         [HttpGet]

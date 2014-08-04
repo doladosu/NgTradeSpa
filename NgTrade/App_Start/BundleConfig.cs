@@ -16,7 +16,9 @@ namespace NgTrade
                 "~/Scripts/jquery.signalR-{version}.js",
                 "~/Scripts/jquery.cookie.js",
                 "~/Scripts/bootstrap.*",
-                "~/Scripts/jquery-ui-{version}.js"));
+                "~/Scripts/jquery-ui-{version}.js",
+                "~/Scripts/highstock.js",
+                "~/Scripts/exporting.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/main").Include(
                         "~/Scripts/ngtrade.*"));

@@ -3,12 +3,173 @@
     ['$q', '$timeout', 'datacontext', '$scope', '$location', '$window', '$routeParams', controller]);
 
     function controller($q, $timeout, datacontext, $scope, $location, $window, $routeParams) {
-        var stockToResearch = ($routeParams.stock) ? $routeParams.stock : '';
-        alert(stockToResearch);
         $scope.$root.title = 'NgTradeOnline';
         $scope.$on('$viewContentLoaded', function () {
             $window.ga('send', 'pageview', { 'page': $location.path(), 'title': $scope.$root.title });
         });
+        
+        var stockToResearch = ($routeParams.stock) ? $routeParams.stock : '';
+
+        if (stockToResearch != "") {
+            getStock(stockToResearch);
+            getStockHistory(stockToResearch);
+
+            function getStock(symbol) {
+                datacontext.getStock(symbol)
+                    .then(function(stock) {
+                        $scope.stock = stock.results[0];
+                    });
+            }
+
+            function getStockHistory(symbol) {
+                datacontext.getStockHistoryUtc(symbol)
+                    .then(function (dataR) {
+                       var data = [].concat(dataR.results, [[Date.UTC(2011, 9, 14, 19, 59), null, null, null, null]]);
+
+                        // create the chart
+                        //$('#highchartcontainer').highcharts('StockChart', {
+                        //    chart: {
+                        //        type: 'candlestick',
+                        //        zoomType: 'x'
+                        //    },
+
+                        //    navigator: {
+                        //        adaptToUpdatedData: false,
+                        //        series: {
+                        //            data: data
+                        //        }
+                        //    },
+
+                        //    scrollbar: {
+                        //        liveRedraw: false
+                        //    },
+
+                        //    title: {
+                        //        text: stockToResearch + ' chart history'
+                        //    },
+
+                        //    rangeSelector: {
+                        //        buttons: [{
+                        //            type: 'day',
+                        //            count: 1,
+                        //            text: '1d'
+                        //        }, {
+                        //            type: 'month',
+                        //            count: 1,
+                        //            text: '1m'
+                        //        }, {
+                        //            type: 'month',
+                        //            count: 3,
+                        //            text: '3m'
+                        //        }],
+                        //        inputEnabled: false, // it supports only days
+                        //        selected: 4 // all
+                        //    },
+
+                        //    xAxis: {
+                        //        events: {
+                        //            afterSetExtremes: afterSetExtremes
+                        //        },
+                        //        minRange: 3600 * 1000 // one hour
+                        //    },
+
+                        //    yAxis: {
+                        //        floor: 0
+                        //    },
+
+                        //    series: [{
+                        //        data: data,
+                        //        dataGrouping: {
+                        //            enabled: false
+                        //        }
+                        //    }]
+                        //});
+                    });
+            }
+
+            $.getJSON('http://www.highcharts.com/samples/data/from-sql.php?callback=?', function (data) {
+
+                // Add a null value for the end date 
+                data = [].concat(data, [[Date.UTC(2011, 9, 14, 19, 59), null, null, null, null]]);
+
+                // create the chart
+                $('#highchartcontainer').highcharts('StockChart', {
+                    chart: {
+                        type: 'candlestick',
+                        zoomType: 'x'
+                    },
+
+                    navigator: {
+                        adaptToUpdatedData: false,
+                        series: {
+                            data: data
+                        }
+                    },
+
+                    scrollbar: {
+                        liveRedraw: false
+                    },
+
+                    title: {
+                        text: stockToResearch + ' chart history'
+                    },
+
+                    rangeSelector: {
+                        buttons: [{
+                            type: 'day',
+                            count: 1,
+                            text: '1d'
+                        }, {
+                            type: 'month',
+                            count: 1,
+                            text: '1m'
+                        }, {
+                            type: 'month',
+                            count: 3,
+                            text: '3m'
+                        }],
+                        inputEnabled: false, // it supports only days
+                        selected: 4 // all
+                    },
+
+                    xAxis: {
+                        events: {
+                            afterSetExtremes: afterSetExtremes
+                        },
+                        minRange: 3600 * 1000 // one hour
+                    },
+
+                    yAxis: {
+                        floor: 0
+                    },
+
+                    series: [{
+                        data: data,
+                        dataGrouping: {
+                            enabled: false
+                        }
+                    }]
+                });
+            });
+
+            function afterSetExtremes(e) {
+
+                var currentExtremes = this.getExtremes(),
+                     range = e.max - e.min,
+                     chart = $('#highchartcontainer').highcharts();
+
+                chart.showLoading('Loading data from server...');
+                $.getJSON('http://www.highcharts.com/samples/data/from-sql.php?start=' + Math.round(e.min) +
+                          '&end=' + Math.round(e.max) + '&callback=?', function (data) {
+
+                              chart.series[0].setData(data);
+                              chart.hideLoading();
+                          });
+
+            }
+
+        }
+
         $scope.columnDefs = [
             { field: 'Stock', displayName: 'Stock', enableCellEdit: false, cellTemplate: '<div class="ngCellText" ng-class="col.colIndex()"><a href="#research?stock={{row.getProperty(col.field)}}">{{row.getProperty(col.field)}}</a></div>' },
             { field: 'Open', displayName: 'Open' },

@@ -18,7 +18,9 @@
 
         var service = {
             addPropertyChangeHandler: addPropertyChangeHandler,
-            getDailylist: getDailylist
+            getDailylist: getDailylist,
+            getStock: getStock,
+            getStockHistoryUtc: getStockHistoryUtc
         };
         return service;
 
@@ -35,7 +37,32 @@
         function getDailylist() {
             var query = breeze.EntityQuery
                 .from("Dailypricelists");
-            //.orderBy("CreatedAt");
+
+            var promise = manager.executeQuery(query).catch(queryFailed);
+            return promise;
+
+            function queryFailed(error) {
+                throw error; // so downstream promise users know it failed
+            }
+        }
+
+        function getStock(symbol) {
+            var query = breeze.EntityQuery
+                .from("Dailypricelists")
+                .where("Stock", "==", symbol);
+
+            var promise = manager.executeQuery(query).catch(queryFailed);
+            return manager.unWrap(promise);
+
+            function queryFailed(error) {
+                throw error; // so downstream promise users know it failed
+            }
+        }
+
+        function getStockHistoryUtc(symbol) {
+            var query = breeze.EntityQuery
+                .from("QuoteUtcDate")
+                .where("Symbol", "==", symbol);
 
             var promise = manager.executeQuery(query).catch(queryFailed);
             return promise;

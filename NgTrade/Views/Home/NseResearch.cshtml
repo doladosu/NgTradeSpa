@@ -1,53 +1,76 @@
-﻿
-@{
+﻿@{
     Layout = null;
 }
 
 
-        <!--=== Breadcrumbs ===-->
+<!--=== Breadcrumbs ===-->
 <div class="breadcrumbs">
     <div class="container">
-        <h1 class="pull-left">Accordion &amp; Tabs</h1>
-        <ul class="pull-right breadcrumb">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="">Features</a></li>
-            <li class="active">Accordion &amp; Tabs</li>
-        </ul>
+        <h1 class="pull-left">{{stock.Stock}} - Current Price: {{stock.Close}} Change: <span data-ng-class="{green: stock.Change > 0, red: stock.Change < 0}">{{stock.Change}}</span></h1>
     </div>
 </div><!--/breadcrumbs-->
-        <!--=== End Breadcrumbs ===-->
-        <!--=== Content Part ===-->
+<!--=== End Breadcrumbs ===-->
+<!--=== Content Part ===-->
 <div class="container content">
     <div class="row">
         <!-- Begin Content -->
         <div class="col-md-9">
-            <div class="margin-bottom-60"></div>
             <!-- Tab v1 -->
             <div class="tab-v1">
                 <ul class="nav nav-tabs">
-                    <li class="active"><a href="#/research#home" data-toggle="tab">Home</a></li>
-                    <li><a href="#/research#profile" data-toggle="tab">Profile</a></li>
-                    <li><a href="#/research#messages" data-toggle="tab">Messages</a></li>
+                    <li class="active"><a href="#/research#summary" data-toggle="tab">Summary</a></li>
+                    <li><a href="#/research#news" data-toggle="tab">News</a></li>
+                    <li><a href="#/research#charts" data-toggle="tab">Charts</a></li>
                     <li><a href="#/research#settings" data-toggle="tab">Settings</a></li>
                 </ul>
                 <div class="tab-content">
-                    <div class="tab-pane fade in active" id="home">
+                    <div class="tab-pane fade in active" id="Summary">
                         <div class="row">
+                            <!--Striped Rows-->
                             <div class="col-md-4">
-                                <img alt="" class="img-responsive img-tab-space" src="assets/img/new/img4.jpg">
+                                <div class="panel panel-sea margin-bottom-40">
+                                    <table class="table table-striped">
+                                        <tbody>
+                                            <tr>
+                                                <td>Today's Change</td>
+                                                <td data-ng-class="{green: stock.Change > 0, red: stock.Change < 0}">{{stock.Change}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Today's Open</td>
+                                                <td>{{stock.Open}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Today's Close</td>
+                                                <td>{{stock.Close}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Today's High</td>
+                                                <td>{{stock.High}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Today's Low</td>
+                                                <td>{{stock.Low}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Volume</td>
+                                                <td>{{stock.Volume}}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
+                            <!--End Striped Rows-->
                             <div class="col-md-8">
-                                <h4>Heading Sample 1</h4>
-                                <p>Vivamus imperdiet condimentum diam, eget placerat felis consectetur id. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum <strong>ivamus imperdiet</strong> condimentum diam, eget placerat felis consectetur id. Donec eget orci metus, ac adipiscing nunc. Pellentesque <strong>fermentum vivamus</strong> imperdiet condimentum diam, eget placerat felis consectetur id. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, ante ac felis consectetur id. Donec eget orci metusvivamus imperdiet.</p>
+                                <div id="highchartcontainer" style="height: 300px;"></div>
                             </div>
                         </div>
                     </div>
-                    <div class="tab-pane fade in" id="profile">
+                    <div class="tab-pane fade in" id="news">
                         <img alt="" class="pull-left lft-img-margin img-width-200" src="assets/img/main/5.jpg">
                         <h4>Heading Sample 2</h4>
                         <p>Vivamus imperdiet condimentum diam, eget placerat felis consectetur id. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, ante ac interdum ullamcorper. Donec eget orci metus, <strong>ac adipiscing nunc.</strong> Vivamus imperdiet condimentum diam, eget placerat felis consectetur id. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, ante ac interdum id. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, ante ac interdum ullamcorper. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, ante ac <strong>interdum ullamcorper.</strong></p>
                     </div>
-                    <div class="tab-pane fade in" id="messages">
+                    <div class="tab-pane fade in" id="charts">
                         <h4>Heading Sample 3</h4>
                         <p><img alt="" class="pull-right rgt-img-margin img-width-200" src="assets/img/main/6.jpg"> <strong>Vivamus imperdiet condimentum diam, eget placerat felis consectetur id.</strong> Donec eget orci metus, Vivamus imperdiet condimentum diam, eget placerat felis consectetur id. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, ante ac interdum ullamcorper. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, consectetur id. Donec eget orci metus, ac adipiscing nunc. <strong>Pellentesque fermentum</strong>, ante ac interdum ullamcorper. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, ante ac interdum ullamcorper.</p>
                     </div>
@@ -126,7 +149,7 @@
             <!-- Tab v3 -->
         </div>
         <!-- End Content -->
-        
+
         <div class="col-md-3">
         </div>
 
