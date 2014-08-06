@@ -5,6 +5,7 @@ using System.Web.Helpers;
 using System.Web.Http;
 using NgTrade.Models.Info;
 using NgTrade.Models.Repo.Interface;
+using NgTrade.Models.ViewModel;
 using WebMatrix.WebData;
 
 namespace NgTrade.Controllers
@@ -12,10 +13,12 @@ namespace NgTrade.Controllers
     public class UserController : ApiController
     {
         private readonly IAccountRepository _accountRepository;
+        private readonly ISmtpRepository _smtpRepository;
 
-        public UserController(IAccountRepository accountRepository)
+        public UserController(IAccountRepository accountRepository, ISmtpRepository smtpRepository)
         {
             _accountRepository = accountRepository;
+            _smtpRepository = smtpRepository;
         }
 
         public HttpResponseMessage GetProfile()
@@ -39,5 +42,27 @@ namespace NgTrade.Controllers
             var response = Request.CreateResponse(HttpStatusCode.OK, accountProfile);
             return response;
         }
+
+        public HttpResponseMessage Contact(ContactViewModel contactVm)
+        {
+            var response = Request.CreateResponse(HttpStatusCode.BadRequest, contactVm);
+            if (!ModelState.IsValid)
+            {
+                return response;
+            }
+
+            var contact = new ContactViewModel
+            {
+                Email = contactVm.Email,
+                Name = contactVm.Name,
+                Message = contactVm.Message
+            };
+
+            _smtpRepository.SendContactEmail(contact);
+
+            response = Request.CreateResponse(HttpStatusCode.OK, contactVm);
+            return response;
+        }
+
     }
 }

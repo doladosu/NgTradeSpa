@@ -2506,6 +2506,7 @@
     <Content Include="Scripts\app\directives\directives.js" />
     <Content Include="Scripts\app\services\filters.js" />
     <Content Include="Scripts\app\services\httpInterceptor.js" />
+    <Content Include="Scripts\app\services\httpService.js" />
     <Content Include="Scripts\app\services\logger.js" />
     <Content Include="Scripts\app\services\modalService.js" />
     <Content Include="Scripts\app\services\services.js" />
