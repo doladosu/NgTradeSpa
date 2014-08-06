@@ -9,7 +9,7 @@ appRoot
                 .when('/about', { templateUrl: '/home/about', controller: 'StaticController' })
                 .when('/nsecontactus', { templateUrl: '/home/nsecontactus', controller: 'ContactController' })
                 .when('/nseeducation', { templateUrl: '/home/nseeducation', controller: 'StaticController', secure: true })
-                .when('/nsenews', { templateUrl: '/home/nsenews', controller: 'StaticController' })
+                .when('/nsenews', { templateUrl: '/home/nsenews', controller: 'NewsController' })
                 .when('/nsefaq', { templateUrl: '/home/nsefaq', controller: 'StaticController' })
                 .when('/nseprivacy', { templateUrl: '/home/nseprivacy', controller: 'StaticController' })
                 .when('/nseterms', { templateUrl: '/home/nseterms', controller: 'StaticController' })

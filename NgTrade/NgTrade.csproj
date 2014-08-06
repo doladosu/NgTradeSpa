@@ -2496,6 +2496,7 @@
     <Content Include="Scripts\app\home\about.js" />
     <Content Include="Scripts\app\home\contact.js" />
     <Content Include="Scripts\app\home\main.js" />
+    <Content Include="Scripts\app\home\news.js" />
     <Content Include="Scripts\app\home\research.js" />
     <Content Include="Scripts\app\home\static.js" />
     <Content Include="Scripts\app\navbarController.js" />
