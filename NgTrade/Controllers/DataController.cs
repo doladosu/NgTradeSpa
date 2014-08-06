@@ -86,8 +86,8 @@ namespace NgTrade.Controllers
         [HttpGet]
         public IQueryable<StockChart> QuoteUtcDate()
         {
-            var quotes = _ngTradeRepository.Quotes.ToList().Where(e => e.Date > DateTime.Now.AddMonths(-6));
-            var stockChartsList = quotes.Select(quote => new StockChart {A = GetTime(quote.Date), B = quote.Open, C = quote.High, D = quote.Low, E = quote.Close, Symbol = quote.Symbol}).ToList();
+            var quotes = _ngTradeRepository.Quotes.ToList().Where(e => e.Date > DateTime.Now.AddMonths(-3));
+            var stockChartsList = quotes.Select(quote => new StockChart {DateTimeUtc = GetTime(quote.Date), Open = quote.Open, High = quote.High, Low = quote.Low, Close = quote.Close, Symbol = quote.Symbol}).ToList();
             return stockChartsList.AsQueryable();
         }
 

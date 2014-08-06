@@ -42,7 +42,7 @@
             return promise;
 
             function queryFailed(error) {
-                throw error; // so downstream promise users know it failed
+                throw error;
             }
         }
 
@@ -52,23 +52,31 @@
                 .where("Stock", "==", symbol);
 
             var promise = manager.executeQuery(query).catch(queryFailed);
-            return manager.unWrap(promise);
+            return promise;
 
             function queryFailed(error) {
-                throw error; // so downstream promise users know it failed
+                throw error;
             }
         }
 
-        function getStockHistoryUtc(symbol) {
+        function getStockHistoryUtc(symbol, fromDate, toDate) {
             var query = breeze.EntityQuery
                 .from("QuoteUtcDate")
                 .where("Symbol", "==", symbol);
 
+            if (fromDate || toDate) {
+                var fromDateInt = parseInt(fromDate);
+                var toDateInt = parseInt(toDate);
+
+                query = query
+                    .where("DateTimeUtc", "gt", fromDateInt)
+                    .where("DateTimeUtc", "lt", toDateInt);
+            }
             var promise = manager.executeQuery(query).catch(queryFailed);
             return promise;
 
             function queryFailed(error) {
-                throw error; // so downstream promise users know it failed
+                throw error;
             }
         }
     }

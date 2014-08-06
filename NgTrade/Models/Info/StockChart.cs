@@ -1,22 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace NgTrade.Models.Info
+﻿namespace NgTrade.Models.Info
 {
     public class StockChart
     {
-        //DateTimeUtc
-        public long A { get; set; }
-        //Open
-        public decimal B { get; set; }
-        //High
-        public decimal C { get; set; }
-        //Low
-        public decimal D { get; set; }
-        //Close
-        public decimal E { get; set; }
+        public long DateTimeUtc { get; set; }
+        public decimal Open { get; set; }
+        public decimal High { get; set; }
+        public decimal Low { get; set; }
+        public decimal Close { get; set; }
         public string Symbol { get; set; }
     }
 }
