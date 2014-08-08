@@ -15,7 +15,7 @@
             $scope.contact = function () {
                 httpService.contact($scope.name, $scope.email, $scope.message).then(function (status) {
                     if (!status) {
-                        logger.error("Please check your username and password", "Login failed");
+                        logger.success("Your message is recieved. A representative will respond to you message.", "Message Sent!");
                         return;
                     }
                 });

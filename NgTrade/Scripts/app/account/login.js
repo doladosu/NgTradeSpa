@@ -1,11 +1,4 @@
-﻿//angular.module('main')
-//    .controller('LoginController', ['$scope', function ($scope) {
-//        $(document).ready(function () {
-//            App.init();
-//        });
-//    }]);
-
-(function() {
+﻿(function() {
 
     var loginController = function ($scope, $location, $window, $routeParams, authService, logger) {
 

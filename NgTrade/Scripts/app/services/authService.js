@@ -4,6 +4,7 @@
         var serviceBase = '/api/auth/',
             factory = {
                 loginPath: '/login',
+                registerPath: '/register',
                 user: {
                     isAuthenticated: false,
                     roles: null
@@ -23,6 +24,27 @@
             return $http.post(serviceBase + 'logout').then(
                 function(results) {
                     var loggedIn = results.data.userId > 0;
+                    changeAuth(loggedIn);
+                    return loggedIn;
+                });
+        };
+
+        factory.register = function(username, firstname, lastname, password, confirmpassword, address1, address2, city, state, country, phone) {
+            return $http.post(serviceBase + 'register', {
+                userName: username,
+                firstname: firstname,
+                lastname: lastname,
+                Password: password,
+                confirmpassword: confirmpassword,
+                address1: address1,
+                address2: address2,
+                city: city,
+                state: state,
+                country: country,
+                phone: phone
+            }).then(
+                function(results) {
+                    var loggedIn = results.data.userId > 0;;
                     changeAuth(loggedIn);
                     return loggedIn;
                 });

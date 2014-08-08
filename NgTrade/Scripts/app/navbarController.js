@@ -32,6 +32,10 @@
             setLoginLogoutText(loggedIn);
         });
 
+        $scope.$on('registerStatusChanged', function (loggedIn) {
+            setRegisterLogoutText(loggedIn);
+        });
+
         $scope.$on('redirectToLogin', function() {
             redirectToLogin();
         });
@@ -40,8 +44,12 @@
             $scope.loginLogoutText = (authService.user.isAuthenticated) ? 'Logout' : 'Login';
         }
 
-        setLoginLogoutText();
+        function setRegisterLogoutText() {
+            $scope.registerLogoutText = (authService.user.isAuthenticated) ? '' : 'Register';
+        }
 
+        setLoginLogoutText();
+        setRegisterLogoutText();
     };
 
     navbarController.$inject = ['$scope', '$location', 'authService', '$routeParams'];

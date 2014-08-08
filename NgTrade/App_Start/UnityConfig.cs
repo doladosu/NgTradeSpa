@@ -14,6 +14,7 @@ namespace NgTrade
 
             container.RegisterType<IAccountRepository, AccountRepository>();
             container.RegisterType<INgTradeRepository, NgTradeRepository>();
+            container.RegisterType<ISmtpRepository, SmtpRepository>();
 
             GlobalConfiguration.Configuration.DependencyResolver = new UnityDependencyResolver(container);
         }

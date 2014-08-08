@@ -1,4 +1,4 @@
-﻿@model NgTrade.Models.RegisterModel
+﻿@*@model NgTrade.Models.RegisterModel
 @{
   ViewBag.Title = "Nigerian Stock Exchange Trading Online NSE Daily Price List - NgTradeOnline Open Account";
 }
@@ -54,4 +54,101 @@
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
+}*@
+
+
+@{
+    Layout = null;
+    ViewBag.Title = "NgTradeOnline - Register";
 }
+
+<!--=== Content Part ===-->
+<div class="container content">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+            <form class="reg-page" name="registerForm" novalidate>
+                <div class="reg-header">
+                    <h4>Register a new account</h4>
+                    <p>Already Signed Up? Click <a href="#/login" class="color-green">Sign In</a> to login your account.</p>
+                </div>
+
+                <input type="text" class="form-control margin-bottom-20" placeholder="User Name" name="username" data-ng-model="username" required>
+                <span class="errorMessage" ng-show="registerForm.username.$dirty && registerForm.username.$invalid">
+                    User name is required
+                </span>
+
+                <input type="text" class="form-control margin-bottom-20" placeholder="First Name" name="firstname" data-ng-model="firstname" required>
+                <span class="errorMessage" ng-show="registerForm.firstname.$dirty && registerForm.firstname.$invalid">
+                    First name is required
+                </span>
+
+                <input type="text" class="form-control margin-bottom-20" placeholder="Last Name" name="lastname" data-ng-model="lastname" required>
+                <span class="errorMessage" ng-show="registerForm.lastname.$dirty && registerForm.lastname.$invalid">
+                    Last name is required
+                </span>
+
+                <input type="email" class="form-control margin-bottom-20" placeholder="Email Address" name="email" data-ng-model="email" required>
+                <span class="errorMessage" ng-show="registerForm.email.$dirty && registerForm.email.$invalid">
+                    Email is required
+                </span>
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <input type="password" class="form-control margin-bottom-20" placeholder="Password" name="password" data-ng-model="password" required>
+                        <span class="errorMessage" ng-show="registerForm.email.$dirty && registerForm.email.$invalid">
+                            Password is required
+                        </span>
+                    </div>
+                    <div class="col-sm-6">
+                        <input type="password" class="form-control margin-bottom-20" placeholder="Confirm password" name="confirmpassword" data-ng-model="confirmpassword" required>
+                        <span class="errorMessage" ng-show="registerForm.email.$dirty && registerForm.email.$invalid">
+                            Confirm password is required
+                        </span>
+                    </div>
+                </div>
+
+                <input type="text" class="form-control margin-bottom-20" placeholder="Address 1" name="address1" data-ng-model="address1" required>
+                <span class="errorMessage" ng-show="registerForm.email.$dirty && registerForm.email.$invalid">
+                    Address 1 is required
+                </span>
+
+                <input type="text" class="form-control margin-bottom-20" placeholder="Address 2" name="address2" data-ng-model="address2">
+
+                <input type="text" class="form-control margin-bottom-20" placeholder="City" name="city" data-ng-model="city" required>
+                <span class="errorMessage" ng-show="registerForm.email.$dirty && registerForm.email.$invalid">
+                    City is required
+                </span>
+
+                <input type="text" class="form-control margin-bottom-20" placeholder="State" name="state" data-ng-model="state" required>
+                <span class="errorMessage" ng-show="registerForm.email.$dirty && registerForm.email.$invalid">
+                    State is required
+                </span>
+
+                <input type="text" class="form-control margin-bottom-20" placeholder="Country" name="country" data-ng-model="country" required>
+                <span class="errorMessage" ng-show="registerForm.email.$dirty && registerForm.email.$invalid">
+                    Country is required
+                </span>
+
+                <input type="text" class="form-control margin-bottom-20" placeholder="Phone" name="phone" data-ng-model="phone" required>
+                <span class="errorMessage" ng-show="registerForm.email.$dirty && registerForm.email.$invalid">
+                    Phone is required
+                </span>
+                <hr>
+
+                <div class="row">
+                    <div class="col-lg-6">
+                        <label class="checkbox">
+                            <input type="checkbox" required>
+                            I have read <a href="#/nseterms" class="color-green">Terms and Conditions</a>
+                        </label>
+                    </div>
+                    <div class="col-lg-6 text-right">
+                        <button class="btn-u" type="submit" data-ng-click="register()" ng-disabled="registerForm.$invalid || !registerForm.$dirty">Register</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!--/container-->
+<!--=== End Content Part ===-->

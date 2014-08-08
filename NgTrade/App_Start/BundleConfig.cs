@@ -115,7 +115,10 @@ namespace NgTrade
                         "~/Content/ng-grid.css"));
 
             bundles.Add(new StyleBundle("~/Content/css/unify").Include(
-                "~/assets/plugins/bootstrap/css/bootstrap.css",
+                "~/Content/bootstrap.min.css",
+                "~/Content/ng-grid.css",
+                "~/Content/toastr.css",
+                "~/Content/bootstrap-theme.min.css",
                 "~/assets/css/style.css",
                 "~/assets/plugins/line-icons/line-icons.css",
                 "~/assets/plugins/font-awesome/css/font-awesome.css",
@@ -123,14 +126,11 @@ namespace NgTrade
                 "~/assets/plugins/owl-carousel/owl-carousel/owl.carousel.css",
                 "~/assets/css/themes/default.css",
                 "~/assets/css/themes/headers/default.css",
+                "~/assets/css/pages/page_log_reg_v1.css",
                 "~/assets/css/pages/page_contact.css",
                 "~/assets/css/themes/default.css",
                 "~/assets/css/custom.css",
-                "~/assets/css/pages/page_search_inner.css",
-                "~/Content/ng-grid.css",
-                "~/Content/toastr.css",
-                "~/Content/bootstrap-theme.min.css",
-                "~/Content/bootstrap.min.css"));
+                "~/assets/css/pages/page_search_inner.css"));
 
             bundles.Add(new StyleBundle("~/Content/css/account").Include(
                 "~/Content/bootstrap.min.css",
