@@ -168,6 +168,11 @@
 	text-decoration: none; 
 }
 
+.errorMessage {
+    padding: 2px;
+    background-color: #E03930;
+    color:white;
+}
 /*Top Bar v1 (login, search etc.)
 ------------------------------------*/
 .topbar-v1 {

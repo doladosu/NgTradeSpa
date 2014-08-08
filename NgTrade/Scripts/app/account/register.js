@@ -22,8 +22,9 @@
         $scope.errorMessage = null;
         $scope.isEmailValid = true;
 
-        $scope.login = function () {
-            authService.register($scope.username, $scope.password).then(function (status) {
+        $scope.register = function () {
+            authService.register($scope.username, $scope.firstname, $scope.lastname, $scope.password,
+                $scope.confirmpassword, $scope.address1, $scope.address2, $scope.city, $scope.state, $scope.country, $scope.phone).then(function (status) {
                 if (!status) {
                     logger.error("Please check your username and password", "Login failed");
                     $scope.errorMessage = 'Unable to login';

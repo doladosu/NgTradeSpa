@@ -68,71 +68,73 @@
         <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
             <form class="reg-page" name="registerForm" novalidate>
                 <div class="reg-header">
-                    <h4>Register a new account</h4>
+                    <h4>Register for NgTradeOnline account</h4>
                     <p>Already Signed Up? Click <a href="#/login" class="color-green">Sign In</a> to login your account.</p>
                 </div>
 
-                <input type="text" class="form-control margin-bottom-20" placeholder="User Name" name="username" data-ng-model="username" required>
                 <span class="errorMessage" ng-show="registerForm.username.$dirty && registerForm.username.$invalid">
                     User name is required
                 </span>
+                <input type="text" class="form-control margin-bottom-20" placeholder="User Name" name="username" data-ng-model="username" required>
 
-                <input type="text" class="form-control margin-bottom-20" placeholder="First Name" name="firstname" data-ng-model="firstname" required>
+
                 <span class="errorMessage" ng-show="registerForm.firstname.$dirty && registerForm.firstname.$invalid">
                     First name is required
                 </span>
+                <input type="text" class="form-control margin-bottom-20" placeholder="First Name" name="firstname" data-ng-model="firstname" required>
 
-                <input type="text" class="form-control margin-bottom-20" placeholder="Last Name" name="lastname" data-ng-model="lastname" required>
                 <span class="errorMessage" ng-show="registerForm.lastname.$dirty && registerForm.lastname.$invalid">
                     Last name is required
                 </span>
+                <input type="text" class="form-control margin-bottom-20" placeholder="Last Name" name="lastname" data-ng-model="lastname" required>
 
-                <input type="email" class="form-control margin-bottom-20" placeholder="Email Address" name="email" data-ng-model="email" required>
                 <span class="errorMessage" ng-show="registerForm.email.$dirty && registerForm.email.$invalid">
                     Email is required
                 </span>
+                <input type="email" class="form-control margin-bottom-20" placeholder="Email Address" name="email" data-ng-model="email" required>
 
                 <div class="row">
                     <div class="col-sm-6">
-                        <input type="password" class="form-control margin-bottom-20" placeholder="Password" name="password" data-ng-model="password" required>
-                        <span class="errorMessage" ng-show="registerForm.email.$dirty && registerForm.email.$invalid">
+                        <span class="errorMessage" ng-show="registerForm.password.$dirty && registerForm.password.$invalid">
                             Password is required
                         </span>
+                        <input type="password" class="form-control margin-bottom-20" placeholder="Password" name="password" data-ng-model="password" required>
                     </div>
                     <div class="col-sm-6">
-                        <input type="password" class="form-control margin-bottom-20" placeholder="Confirm password" name="confirmpassword" data-ng-model="confirmpassword" required>
-                        <span class="errorMessage" ng-show="registerForm.email.$dirty && registerForm.email.$invalid">
+                        <span class="errorMessage" ng-show="registerForm.confirmpassword.$dirty && registerForm.confirmpassword.$invalid">
                             Confirm password is required
                         </span>
+                        <input type="password" class="form-control margin-bottom-20" placeholder="Confirm password" name="confirmpassword" data-ng-model="confirmpassword" required>
                     </div>
                 </div>
 
-                <input type="text" class="form-control margin-bottom-20" placeholder="Address 1" name="address1" data-ng-model="address1" required>
-                <span class="errorMessage" ng-show="registerForm.email.$dirty && registerForm.email.$invalid">
+                <span class="errorMessage" ng-show="registerForm.address1.$dirty && registerForm.address1.$invalid">
                     Address 1 is required
                 </span>
+                <input type="text" class="form-control margin-bottom-20" placeholder="Address 1" name="address1" data-ng-model="address1" required>
 
                 <input type="text" class="form-control margin-bottom-20" placeholder="Address 2" name="address2" data-ng-model="address2">
 
-                <input type="text" class="form-control margin-bottom-20" placeholder="City" name="city" data-ng-model="city" required>
-                <span class="errorMessage" ng-show="registerForm.email.$dirty && registerForm.email.$invalid">
+                <span class="errorMessage" ng-show="registerForm.city.$dirty && registerForm.city.$invalid">
                     City is required
                 </span>
+                <input type="text" class="form-control margin-bottom-20" placeholder="City" name="city" data-ng-model="city" required>
 
-                <input type="text" class="form-control margin-bottom-20" placeholder="State" name="state" data-ng-model="state" required>
-                <span class="errorMessage" ng-show="registerForm.email.$dirty && registerForm.email.$invalid">
+                <span class="errorMessage" ng-show="registerForm.state.$dirty && registerForm.state.$invalid">
                     State is required
                 </span>
+                <input type="text" class="form-control margin-bottom-20" placeholder="State" name="state" data-ng-model="state" required>
 
-                <input type="text" class="form-control margin-bottom-20" placeholder="Country" name="country" data-ng-model="country" required>
-                <span class="errorMessage" ng-show="registerForm.email.$dirty && registerForm.email.$invalid">
+                <span class="errorMessage" ng-show="registerForm.country.$dirty && registerForm.country.$invalid">
                     Country is required
                 </span>
-
-                <input type="text" class="form-control margin-bottom-20" placeholder="Phone" name="phone" data-ng-model="phone" required>
-                <span class="errorMessage" ng-show="registerForm.email.$dirty && registerForm.email.$invalid">
+                <input type="text" class="form-control margin-bottom-20" placeholder="Country" name="country" data-ng-model="country" required>
+                
+                <span class="errorMessage" ng-show="registerForm.phone.$dirty && registerForm.phone.$invalid">
                     Phone is required
                 </span>
+                <input type="text" class="form-control margin-bottom-20" placeholder="Phone" name="phone" data-ng-model="phone" required>
+                
                 <hr>
 
                 <div class="row">
